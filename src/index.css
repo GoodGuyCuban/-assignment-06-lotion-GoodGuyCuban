@@ -14,3 +14,63 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+li:first-child {
+  margin-right: auto;
+  background: orange;
+}
+li.spacer {
+  margin-left: auto;
+  visibility: hidden;
+}
+ul.navbar {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-bottom: black solid 1px;
+}
+ul{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border : black solid 1px;
+}
+
+.note{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.notebar{
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border : black solid 1px;
+}
+
+li {
+  display: flex;
+  margin: 3px;
+  padding: 10px;
+  background: lightgray;
+}
+
+.logo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.main{
+  display: flex;
+  flex-direction: row;
+}
+

@@ -17,7 +17,7 @@ a {
 
 li:first-child {
   margin-right: auto;
-  background: orange;
+  
 }
 li.spacer {
   margin-left: auto;
@@ -32,7 +32,7 @@ ul.navbar {
   align-items: center;
   border-bottom: black solid 1px;
 }
-ul{
+ul.menu{
   padding: 0;
   margin: 0;
   display: flex;
@@ -42,18 +42,22 @@ ul{
   border : black solid 1px;
 }
 
-.note{
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-}
 .notebar{
-  margin: auto;
   display: flex;
+  flex: 100%;
   flex-direction: row;
+  max-height: 50px;
   justify-content: space-between;
   align-items: center;
-  border : black solid 1px;
+  margin: 0;
+  border : rgb(255, 0, 0) solid 1px;
+}
+
+.notes{
+  display: flex;
+  flex : 100%;
+  flex-direction: column;
+  border:  rgb(0, 255, 21) solid 1px;
 }
 
 li {
@@ -72,5 +76,6 @@ li {
 div.main{
   display: flex;
   flex-direction: row;
+  
 }
 

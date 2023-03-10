@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Container } from "react-bootstrap";
-import { link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 import Sidebar from "./sidebar";
 // make styled components for the navbar, make the font family arial, and the font size 14px

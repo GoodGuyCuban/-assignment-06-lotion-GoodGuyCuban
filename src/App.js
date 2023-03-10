@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom"
 import React from 'react';
 import Layout from "./components/layout";
 import Notes from "./components/notes";
-import sidebar from "./components/sidebar";
 import Editnote from "./components/editnote";
 
 

@@ -1,9 +1,6 @@
 import React from "react";
-import { useState } from "react";
-import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import styled from "styled-components";
+import { NavLink, useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
-import { useParams } from "react-router-dom";
 
 //create a note object with a unique id and a note number that increments with each new note, add it to the noteList array stored in local storage, also route to the new note
 

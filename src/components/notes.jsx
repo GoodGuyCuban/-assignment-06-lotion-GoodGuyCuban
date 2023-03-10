@@ -2,7 +2,6 @@ import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
-import styled from "styled-components";
 
 //create a function to display the selected using the note id from local storage
 //

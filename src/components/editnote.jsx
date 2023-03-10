@@ -95,7 +95,7 @@ const Editnote = () => {
                 <li class="selectable"><button type="button" onClick={() => deleteNote()}>Delete</button></li>
             </ul>
             <div class="note">
-                <ReactQuill value={content} onChange={handleChange} />
+                <ReactQuill theme="snow" value={content} onChange={handleChange} placeholder="Your note here..." />
             </div>
 
         </div>

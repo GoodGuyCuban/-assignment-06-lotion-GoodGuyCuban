@@ -2,32 +2,30 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
 
-//create a note object with a unique id and a note number that increments with each new note, add it to the noteList array stored in local storage, also route to the new note
 
 const NewNote = () => {
     const noteList = JSON.parse(localStorage.getItem("noteList")) || [];
     const note = {
         id: uuidv4(),
-        notenum: noteList.length + 1,
+        notenum: 1,
         title: "Untitled",
         datetime: "",
-        content: "<i>your message here</i>",
+        content: "",
     }
-
-
-
-    noteList.push(note);
+    for (let i = 0; i < noteList.length; i++) {
+        noteList[i].notenum = noteList[i].notenum + 1;
+    }
+    noteList.unshift(note);
     localStorage.setItem("noteList", JSON.stringify(noteList));
-
-
+    
     return note;
 }
 
 const Sidebar = () => {
-    //navigate to the new note after it is created
+
     const navigate = useNavigate();
     const noteList = JSON.parse(localStorage.getItem("noteList")) || [];
-    //add elipses to the end of the note content if it is longer than 60 characters
+
     for (let i = 0; i < noteList.length; i++) {
         if (noteList[i].content.length > 60) {
             noteList[i].content = noteList[i].content.substring(0, 60) + "...";
@@ -47,7 +45,7 @@ const Sidebar = () => {
                         <NavLink className="navLink" to={`/notes/${note.notenum}`}>
                             <h4>{note.title}</h4>
                             <p class = "subtitle" dangerouslySetInnerHTML={{ __html: note.datetime }} />
-                            <p class = "content" dangerouslySetInnerHTML={{ __html: note.content.length > 100 ? note.content.substring(0, 100) + "..." : note.content }} />
+                            <p class = "content" dangerouslySetInnerHTML={{ __html: note.content.length > 0 ? note.content : "..." }} />
                         </NavLink>
                     </li>
                 ))}

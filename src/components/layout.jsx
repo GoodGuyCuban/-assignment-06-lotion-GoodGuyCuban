@@ -21,7 +21,7 @@ function Layout() {
     return (
         <>  
             <Navbar>
-                <li class="selectable"><button onClick={() => setSidebar(s => !s)} type="button-left"> &#9776; </button></li>
+                <li class="selectable"><button onClick={() => setSidebar(s => !s)} type="button-left"> <h2>&#9776;</h2> </button></li>
                 <li class="logo">
                     <h1 class="logo-center">
                         Lotion

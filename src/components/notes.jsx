@@ -49,7 +49,7 @@ const Notes = () => {
 
 
             <div class="note">
-                <div dangerouslySetInnerHTML={{ __html: note.content }} />
+                <div class = "content" dangerouslySetInnerHTML={{ __html: note.content }} />
             </div>
         </div>
 

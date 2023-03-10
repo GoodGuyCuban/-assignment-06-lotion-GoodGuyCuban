@@ -47,7 +47,7 @@ const Sidebar = () => {
                         <NavLink className="navLink" to={`/notes/${note.notenum}`}>
                             <h4>{note.title}</h4>
                             <p class = "subtitle" dangerouslySetInnerHTML={{ __html: note.datetime }} />
-                            <p dangerouslySetInnerHTML={{ __html: note.content.length > 100 ? note.content.substring(0, 100) + "..." : note.content }} />
+                            <p class = "content" dangerouslySetInnerHTML={{ __html: note.content.length > 100 ? note.content.substring(0, 100) + "..." : note.content }} />
                         </NavLink>
                     </li>
                 ))}

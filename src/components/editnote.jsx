@@ -87,7 +87,7 @@ const Editnote = () => {
             <ul class="notebar">
                 <li>
                     <ul>
-                        <li><input type="text" value={title} onChange={(e) => setTitle(e.target.value)} /></li>
+                        <li><input type="text" class = "title" value={title} onChange={(e) => setTitle(e.target.value)} /></li>
                         <li><input type="datetime-local" value={datetime} onChange={(e) => handleDateChange(e.target.value)} /></li>
                     </ul>
                 </li>

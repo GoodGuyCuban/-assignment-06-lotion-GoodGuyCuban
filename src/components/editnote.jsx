@@ -5,10 +5,6 @@ import 'react-quill/dist/quill.snow.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-//create and edit notes using the quill editor
-//only save the note when the save button is pressed
-//add the ability to delete the note using the delete button
-//also add the ability to edit the title of the note
 const options = {
     year: "numeric",
     month: "long",
@@ -55,7 +51,7 @@ const Editnote = () => {
 
         note.title = title;
         note.content = content;
-        //save the datetime the note was last edited if the datetime was not already set
+        
         if (datetime === "") {
             note.datetime = formatDate(new Date());
         } else {
@@ -65,14 +61,13 @@ const Editnote = () => {
         return note;
     }
 
-    //TODO: fix delete function
     const deleteNote = () => {
         if (window.confirm("Are you sure you want to delete this note?")) {
             const noteList = JSON.parse(localStorage.getItem("noteList")) || [];
             const note = noteList.find(note => note.notenum === parseInt(id));
             const index = noteList.indexOf(note);
             noteList.splice(index, 1);
-            //update notenum for all notes after the deleted note
+            
             for (let i = index; i < noteList.length; i++) {
                 noteList[i].notenum = noteList[i].notenum - 1;
             }

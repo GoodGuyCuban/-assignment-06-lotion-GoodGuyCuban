@@ -3,8 +3,6 @@ import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 
-//create a function to display the selected using the note id from local storage
-//
 const Notes = () => {
     const { id } = useParams();
     const [note, setNote] = useState({});
@@ -15,14 +13,13 @@ const Notes = () => {
         setNote(note);
     }, [id]);
 
-    //create a function to delete the selected note, prompt the user to confirm the deletion, and then route back to the home page
     const deleteNote = () => {
         if (window.confirm("Are you sure you want to delete this note?")) {
             const noteList = JSON.parse(localStorage.getItem("noteList")) || [];
             const note = noteList.find(note => note.notenum === parseInt(id));
             const index = noteList.indexOf(note);
             noteList.splice(index, 1);
-            //update notenum for all notes after the deleted note
+
             for (let i = index; i < noteList.length; i++) {
                 noteList[i].notenum = noteList[i].notenum - 1;
             }

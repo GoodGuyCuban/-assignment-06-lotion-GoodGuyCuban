@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 import Sidebar from "./sidebar";
-// make styled components for the navbar, make the font family arial, and the font size 14px
+
 const Navbar = styled.ul`
     padding: 0;
     margin: 0;

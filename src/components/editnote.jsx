@@ -32,7 +32,7 @@ const Editnote = () => {
     const [datetime, setDatetime] = useState("");
     const [title, setTitle] = useState("");
     const navigate = useNavigate();
-    
+
     useEffect(() => {
         const noteList = JSON.parse(localStorage.getItem("noteList")) || [];
         const note = noteList.find(note => note.notenum === parseInt(id));
@@ -85,18 +85,21 @@ const Editnote = () => {
     return (
         <div class="notes">
             <ul class="notebar">
-                <li><input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-                    <input type="datetime-local" value={datetime} onChange={(e) => handleDateChange(e.target.value)} />
+                <li>
+                    <ul>
+                        <li><input type="text" value={title} onChange={(e) => setTitle(e.target.value)} /></li>
+                        <li><input type="datetime-local" value={datetime} onChange={(e) => handleDateChange(e.target.value)} /></li>
+                    </ul>
                 </li>
-                <li><button type="button" onClick={() => navigate(`/notes/${SaveNote().notenum}`)}>Save</button></li>
-                <li><button type="button" onClick={() => deleteNote()}>Delete</button></li>
+                <li class="selectable"><button type="button" onClick={() => navigate(`/notes/${SaveNote().notenum}`)}>Save</button></li>
+                <li class="selectable"><button type="button" onClick={() => deleteNote()}>Delete</button></li>
             </ul>
             <div class="note">
                 <ReactQuill value={content} onChange={handleChange} />
             </div>
-            
-        </div>        
-        
+
+        </div>
+
     )
 }
 

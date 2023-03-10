@@ -8,11 +8,12 @@ import Sidebar from "./sidebar";
 const Navbar = styled.ul`
     padding: 0;
     margin: 0;
+    height: 75px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border-bottom: black solid 1px;
+    border-bottom: lightgray solid 1px;
     `;
 
 function Layout() {
@@ -21,12 +22,12 @@ function Layout() {
     return (
         <>  
             <Navbar>
-                <li><button onClick={() => setSidebar(s => !s)} type="button-left"> MENU </button></li>
+                <li class="selectable"><button onClick={() => setSidebar(s => !s)} type="button-left"> &#9776; </button></li>
                 <li class="logo">
                     <h1 class="logo-center">
-                        Logo
+                        Lotion
                     </h1>
-                    <p>subtitle</p>
+                    <p>Like Notion, but worse.</p>
                 </li>
                 <li class="spacer">egg</li>
             </Navbar>

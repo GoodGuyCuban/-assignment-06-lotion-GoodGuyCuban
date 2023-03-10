@@ -1,4 +1,10 @@
-body,
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 h1,
 h2,
 h3,
@@ -28,36 +34,37 @@ li.spacer {
 ul.menu{
   padding: 0;
   margin: 0;
+  margin-left: 5%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border : black solid 1px;
+  border-bottom: lightgray solid 1px;
+  border-right: lightgray solid 1px;
 }
 
 .notebar{
   display: flex;
   flex: 100%;
   flex-direction: row;
-  max-height: 50px;
+  max-height: 75px;
   justify-content: space-between;
   align-items: center;
   margin: 0;
-  border : rgb(255, 0, 0) solid 1px;
+  padding: 0;
+  border-bottom: lightgray solid 1px;
 }
 
 .notes{
   display: flex;
   flex : 100%;
   flex-direction: column;
-  border:  rgb(0, 255, 21) solid 1px;
 }
 
 li {
   display: flex;
-  margin: 3px;
-  padding: 10px;
-  background: lightgray;
+  margin: 0;
+  padding: 0;
 }
 
 .logo{
@@ -69,9 +76,64 @@ li {
 div.main{
   display: flex;
   flex-direction: row;
-  
+  height: 100vh;
 }
 
 .active {
-  background: rgb(0, 255, 21);
+  background: darkslateblue;
+  color: white;
+}
+
+.navLink {
+  padding: 10px;
+  width: 100%;
+  height: 55px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  height: 100%;
+  background: none;
+  border: none;
+  color: black;
+  font-size: medium;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: purple;
+  color: white;
+}
+
+.selectable {
+  display: block;
+  height: 100%;
+  background: none;
+  color: black;
+  font-size: medium;
+  cursor: pointer;
+}
+
+.sidebar{
+  width: 250px;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-container{
+  display: flex;
+  flex-direction: column;
+  border-right: lightgray solid 1px;
+  height: 100vh;
+}
+
+.subtitle{
+  font-size: 12px;
+  color: gray;
+}
+
+p{
+  font-size: 14px;
 }

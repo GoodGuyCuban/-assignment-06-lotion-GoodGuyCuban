@@ -7,7 +7,6 @@ import Editnote from "./components/editnote";
 
 
 //route the edit page using the note num as a parameter to the Editnote component
-
 function App() {
   return (
     <BrowserRouter>

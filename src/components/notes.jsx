@@ -4,10 +4,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import styled from "styled-components";
 
-
 //create a function to display the selected using the note id from local storage
 //
-
 const Notes = () => {
     const { id } = useParams();
     const [note, setNote] = useState({});
@@ -40,9 +38,14 @@ const Notes = () => {
         <div class="notes">
 
             <ul class="notebar">
-                <li><h1>{note.title}</h1></li>
-                <li><button type="button"><Link to={`/notes/${note.notenum}/edit`}>Edit</Link></button></li>
-                <li><button type="button" onClick={() => deleteNote()}>Delete</button></li>
+                <li>
+                    <ul>
+                        <h1>{note.title}</h1>
+                        <p>{note.datetime}</p>
+                    </ul>
+                </li>
+                <li class="selectable"><Link to={`/notes/${note.notenum}/edit`}><button type="button">Edit</button></Link></li>
+                <li class="selectable"><button type="button" onClick={() => deleteNote()}>Delete</button></li>
             </ul>
 
 

@@ -26,39 +26,35 @@ const NewNote = () => {
     return note;
 }
 
-//create styled components for the sidebar, make the font family arial, and the font size 14px
-const sidebarComponent = styled.ul`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-`;
-
-
-
-
-
 const Sidebar = () => {
     //navigate to the new note after it is created
     const navigate = useNavigate();
     const noteList = JSON.parse(localStorage.getItem("noteList")) || [];
+    //add elipses to the end of the note content if it is longer than 60 characters
+    for (let i = 0; i < noteList.length; i++) {
+        if (noteList[i].content.length > 60) {
+            noteList[i].content = noteList[i].content.substring(0, 60) + "...";
+        }
+    }
 
 
     return (
-        <div>
+        <div class = "sidebar-container">
             <ul class="menu">
-                <li>Notes</li>
-                <li><button type="button" onClick={() => navigate(`/notes/${NewNote().notenum}/edit`)}>New Note</button></li>
+                <li><h2>Notes</h2></li>
+                <li><button type="button" onClick={() => navigate(`/notes/${NewNote().notenum}/edit`)}><h2>+</h2></button></li>
             </ul>
-            <sidebarComponent>
+            <ul class = "sidebar">
                 {noteList.map(note => (
                     <li key={note.id}>
-                        <NavLink to={`/notes/${note.notenum}`}>{note.title}
-                            <p dangerouslySetInnerHTML={{ __html: note.datetime }} />
+                        <NavLink className="navLink" to={`/notes/${note.notenum}`}>
+                            <h4>{note.title}</h4>
+                            <p class = "subtitle" dangerouslySetInnerHTML={{ __html: note.datetime }} />
                             <p dangerouslySetInnerHTML={{ __html: note.content.length > 100 ? note.content.substring(0, 100) + "..." : note.content }} />
                         </NavLink>
                     </li>
                 ))}
-            </sidebarComponent>
+            </ul>
         </div>
     )
 }
